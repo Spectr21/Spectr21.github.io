@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+</head>
+<style>
+	section{
+		font:100px "Impact";
+	}
+	button{
+		margin-left: 400px;
+		background-color: blue;
+		font:70px;
+		padding: 10px;
+	}
+	h1{
+		color: #8B0000;
+	background-color: ;
+	font: 100px "Impact", sans-serif, bold;
+	text-align: center;
+}
+p{
+	font: 50px "Impact", sans-serif, bold;
+	color: #FF4500;	
+}
+input{
+	font-size: 50px	
+}
+</style>
+<body bgcolor="#7FFF00">
+	<h1>Тест, господа</h1>
+<p>Задание 1:Брат Менелая <input type="text" id="q1"/></p>
+<p>Задание 2:Кто из ахейцев погиб первым? <input type="text" id="q2"></p>
+<p>Задание 3:Сильное, слабое и электромагнитное воздействие.Какое ещё осталось?<input type="text" id="q3"></p>
+<p>Задание 4:Берутся два ? на околосветовой скорости и сталкиваются лоб в лоб<input type="text" id="q4"></p>
+<p>Задание 5:Оптический феномен, светящееся кольцо вокруг объекта — источника света<input type="text" id="q5"></p>
+<p>Задание 6:Теорию струн называют Теорией ?<input type="text" id="q6"></p>
+<p>Задание 7:? - это очень быстрое расширение Вселенной после Большого взрыва<input type="text" id="q7"></p>
+<p>Задание 8:Самоубийца, массой 72кг, прыгает с высоты 78м.Какова будет его кинетическая энергия на высоте 21м?(В Дж)
+	<input type="text" id="q8"></p>
+<p>Задание 9:Два резистора соединены параллельно.Сопротивления их равны соответственно 10 и 40 Ом.Найдите общее сопротивление.<input type="text" id="q9"></p>
+<p>Задание 10:Сколько нужно теплоты для нагревания 10г воды на 20 гр.Цельсия(В Дж)<input type="text" id="q10"></p>
+<p><button><mark><section>Проверить</section></mark></button></p>
+</body>
+<script>
+	document.querySelector('button').onclick = function check(){
+	var arrAnsw = ['Агамемнон', 'Протесилай', 'Гравитационное', 'Протона', 'Гало', 'Всего', 'Инфляция', '41040', '8', '840']
+	var otv_uch = []
+	var answ1 = document.getElementById("q1").value
+	var answ2 = document.getElementById("q2").value
+	var answ3 = document.getElementById("q3").value
+	var answ4 = document.getElementById("q4").value
+	var answ5 = document.getElementById("q5").value
+	var answ6 = document.getElementById("q6").value
+	var answ7 = document.getElementById("q7").value
+	var answ8 = document.getElementById("q8").value
+	var answ9 = document.getElementById("q9").value
+	var answ10 = document.getElementById("q10").value
+	otv_uch.push(answ1)
+	otv_uch.push(answ2)
+	otv_uch.push(answ3)
+	otv_uch.push(answ4)
+	otv_uch.push(answ5)
+	otv_uch.push(answ6)
+	otv_uch.push(answ7)
+	otv_uch.push(answ8)
+	otv_uch.push(answ9)
+	otv_uch.push(answ10)
+	var right = 0
+	for(var i = 0;i < 10;i++){if (arrAnsw[i] === otv_uch[i]) {right++}
+    }
+	alert(right + ' правильных ответов')
+
+}
+</script>
+</html>
