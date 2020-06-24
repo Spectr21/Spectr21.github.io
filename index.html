@@ -29,6 +29,52 @@
 			padding: 10px;}
 		.back{font:2em "Comic Sans MS", bold;}
 	</style>
+	<script src="https://www.google.com/jsapi"></script>
+  <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+     ['Хобби', 'Его процент в моём сердце'],
+     ['Холодное оружие', 6],
+     ['Математика и Физика', 16],
+     ['Теннис',24],
+     ['Музыка',16],
+     ['Программирование',17],
+     ['Книги', 16],
+     ['Сериалы', 5]
+    ]);
+    var options = {
+     title: 'Увлечения',
+     is3D: true,
+     /*pieResidueSliceLabel: 'Остальное'*/
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('hobby'));
+     chart.draw(data, options);
+   }
+  </script>
+  <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+     ['Год', 'Холодное оружие', 'Математика и Физика', 'Книги', 'Программирование', 'Теннис', 'Сериалы', 'Музыка'],
+     ['2004-2007', 0, 0, 0, 0, 0, 0, 0],
+     ['2008-2014', 0, 0, 3, 0, 0, 0, 0],
+     ['2015-2016', 0, 0, 3, 0, 1, 0, 2],
+     ['2017', 0, 0, 4, 0, 2, 0.5, 2],
+     ['2018', 1.5, 1, 4, 0, 3, 1, 2],
+     ['2019-2020', 2.5, 3, 4.2, 4, 5, 2.5, 3.2],
+    ]);
+    var options = {
+     title: 'Хобби',
+     hAxis: {title: 'Год'},
+     vAxis: {title: 'Уровень заинтересованности'}
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById('hobb'));
+    chart.draw(data, options);
+   }
+  </script>
 </head>
 <body bgcolor="#FFE4C4">
 	<h1><div id="x0" class="conc">Мои интересы:</div></h1><i><mark>Чтобы перейти на точку с описанием хобби, кликните на название этого хобби</mark></i>
@@ -70,6 +116,9 @@
 <div class='back'><a href="#x0">Вернуться к главной</a></div>
 <img src="https://cs3.pikabu.ru/post_img/2014/03/22/9/1395499079_1158997521.jpg" alt="">
 <h2 class="conc">CONCLUSION</h2>
+<h3>Первым делом здесь представлена диаграмма наслаждения от моих хобби, точнее какой процент они занимают в моём сердце. Ну а следом идёт гистограмма, в которой наглядно показано как рос мой уровень заинтересованности(от 1 до 5) в том, или ином хобби с течением времени.</h3>
+<div id="hobby" style="width: 1100px; height: 1000px;"></div>
+<div id="hobb" style="width: 1100px; height: 1000px;"></div>
 <h3>Подводя итоги, я познакомил Вас со своими интересами, постаравшись описать свои чувства при этом. Надеюсь, этого достаточно, чтобы понимать, какой я человек. <mark>Спасибо за внимание!</mark></h3>
 </body>
 </html>
