@@ -1,9 +1,145 @@
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradation</title>
+  <style>
+    body {background: url(фон.jpg)}
+    h2 {
+font-size: 500%;
+color: #800000;
+text-align:center;
+    }
+     h1 {
+font-size: 500%;
+text-align:center;
+    }
+  input[type=range] {
+  height: 72px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 32px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #B6B6B6;
+  border-radius: 25px;
+  border: 1px solid #8A8A8A;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #828282;
+  border: 1px solid #8A8A8A;
+  height: 40px;
+  width: 35px;
+  border-radius: 6px;
+  background: #DADADA;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #B6B6B6;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #B6B6B6;
+  border-radius: 25px;
+  border: 1px solid #8A8A8A;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #828282;
+  border: 1px solid #8A8A8A;
+  height: 24px;
+  width: 35px;
+  border-radius: 6px;
+  background: #DADADA;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #B6B6B6;
+  border: 1px solid #8A8A8A;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #B6B6B6;
+  border: 1px solid #8A8A8A;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #828282;
+  border: 1px solid #8A8A8A;
+  height: 24px;
+  width: 35px;
+  border-radius: 6px;
+  background: #DADADA;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #B6B6B6;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #B6B6B6;
+}
+  </style>
+</head>
+<body>
+<h1>Образность и интерес к тексту</h1>
+ <form onsubmit="return false" oninput="level.value = flevel.valueAsNumber">
+<input id='r1' name="flevel" type="range" min="0" max="12" value="6" step="1" oninput='f1()'>
+<h2><output for="flying" name="level">6</output></h2>
+</form>
+<h1>Разнообразие и техника исполнения</h1>
+<form onsubmit="return false" oninput="level.value = flevel.valueAsNumber">
+<input id='r2' name="flevel" type="range" min="0" max="12" value="6" step="1" oninput='f1()'>
+<h2><output for="flying" name="level">6</output></h2>
+</form>
+<h1>Колоритность(0-5)+Гармоничность(0-2)+Структура текста(0-5)</h1>
+<form onsubmit="return false" oninput="level.value = flevel.valueAsNumber">
+<input id='r5' name="flevel" type="range" min="0" max="12" value="6" step="1" oninput='f1()'>
+<h2><output for="flying" name="level">6</output></h2>
+</form>
+<h1>Атмосфера</h1>
+<form onsubmit="return false" oninput="level.value = flevel.valueAsNumber">
+<input id='r3' name="flevel" type="range" min="0" max="100" value="50" step="10" oninput='f1()'>
+<h2><output for="flying" name="level">50</output>%</h2>
+</form>
+<h1>ОВ</h1>
+<form onsubmit="return false" oninput="level.value = flevel.valueAsNumber">
+<input id='r4' name="flevel" type="range" min="0" max="100" value="50" step="10" oninput='f1()'>
+<h2><output for="flying" name="level">50</output>%</h2>
+<h1 id="time">Итог - <div id="ans"></div> </h1>
+</form>
 <script>
-  while(true){
-    var ans = +prompt('Пароль у тебя есть, надо лишь преобразовать его в численный одним способом интересным(начало нашего общения и пиво), а затем применить конкатенацию и ввести сюда');
-    if(ans==139238186||ans==579275){alert('Умница! Я в тебе не сомневался:D Отправь мне перевод слова "express" и радуйся, ты победила!(I<3u)');
-    break}
-    else{alert('Компьютер говорит !Лауре! попробовать ещё раз')
-
-}}</script>
+function f1() {
+    var a1 = document.getElementById('r1').valueAsNumber;
+    var a2 = document.getElementById('r2').valueAsNumber;
+    var a5 = document.getElementById('r5').valueAsNumber;
+    var hlp = a1+a2+a5  + (a1+a2+a5)*document.getElementById('r3').valueAsNumber/150
+    document.getElementById("ans").innerHTML =  hlp + hlp*document.getElementById('r4').valueAsNumber/150;}
+  </script>
+</body>
+</html>
