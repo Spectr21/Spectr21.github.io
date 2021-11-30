@@ -134,12 +134,15 @@ input[type=range]:focus::-ms-fill-upper {
 <h1 id="time">Итог - <div id="ans"></div> </h1>
 </form>
 <script>
+  var rounded = function(number){
+    return Math.round(parseFloat(number) * 100) / 100;
+}
 function f1() {
     var a1 = document.getElementById('r1').valueAsNumber;
     var a2 = document.getElementById('r2').valueAsNumber;
     var a5 = document.getElementById('r5').valueAsNumber;
     var hlp = a1+a2+a5  + (a1+a2+a5)*document.getElementById('r3').valueAsNumber/150
-    document.getElementById("ans").innerHTML =  hlp + hlp*document.getElementById('r4').valueAsNumber/150;}
+    document.getElementById("ans").innerHTML =  rounded(hlp + hlp*document.getElementById('r4').valueAsNumber/150);}
   </script>
 </body>
 </html>
